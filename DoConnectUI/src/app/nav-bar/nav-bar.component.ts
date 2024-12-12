@@ -24,6 +24,7 @@ export class NavBarComponent implements OnInit {
   isSearched:boolean=false
 
   questions:Question[] | undefined
+  response:any
 
   user=new User()
   admin = new Admin()
@@ -47,6 +48,17 @@ export class NavBarComponent implements OnInit {
     this.isSearched=false
 
   }
+
+  userLogout( userId:number) {
+    this.userService.userLogout(userId).subscribe((data)=>{
+     this.response=data
+    },err =>{
+     this.user=new User()
+     this.userService.sendUserData(this.user)
+     this.router.navigate(["/login"])
+    }
+    )
+ }
 
 
 }

@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class Answer
@@ -30,5 +30,36 @@ public class Answer
 	@OneToOne
 	private Question question;
 	private Boolean isApproved = false;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	public User getAnswerUser() {
+		return answerUser;
+	}
+	public void setAnswerUser(User answerUser) {
+		this.answerUser = answerUser;
+	}
+	public Question getQuestion() {
+		return question;
+	}
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+	public Boolean getIsApproved() {
+		return isApproved;
+	}
+	public void setIsApproved(Boolean isApproved) {
+		this.isApproved = isApproved;
+	}
+	
 
 }

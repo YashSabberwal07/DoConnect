@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class AskQuestionDTO
@@ -21,4 +21,28 @@ public class AskQuestionDTO
 	@NotBlank(message = "Please provide the topic")
 	private String topic;
 
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public String getTopic() {
+		return topic;
+	}
+
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+	
 }

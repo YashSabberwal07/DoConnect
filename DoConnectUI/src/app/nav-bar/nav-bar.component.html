@@ -12,6 +12,31 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+    <ul class="nav navbar-nav navbar-right">
+      <li *ngIf="user.id == 0">
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="btn btn-outline-primary me-2 my-2"
+          role="button"
+        >
+          Log in
+        </a>
+      </li>
+      <li *ngIf="user.id == 0">
+        <a
+          routerLink="/register"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          class="btn btn-outline-primary me-2 my-2"
+          role="button"
+        >
+          Sign up
+        </a>
+      </li>
+
+    </ul>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
       <!--- search content method for testing purpose-->
@@ -25,32 +50,17 @@
           aria-label="Search"
           aria-describedby="addon-wrapping"
         />
+
+      <li *ngIf="user.id !=0"> 
+        <p>Welcome {{user.name}}</p>
+      </li>
+      <li>
+        <button class="btn me-2 btn-outline-danger float-end" (click)="userLogout(user.id)" type="button"> LogOut </button>
+      </li>
+
       </div>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="user.id == 0">
-          <a
-            routerLink="/login"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            class="btn btn-outline-primary me-2 my-2"
-            role="button"
-          >
-            Log in
-          </a>
-        </li>
-        <li *ngIf="user.id == 0">
-          <a
-            routerLink="/register"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            class="btn btn-outline-primary me-2 my-2"
-            role="button"
-          >
-            Sign up
-          </a>
-        </li>
-      </ul>
+      
     </div>
   </div>
 </nav>

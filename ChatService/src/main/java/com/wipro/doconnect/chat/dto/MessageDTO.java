@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class MessageDTO
@@ -16,4 +16,21 @@ public class MessageDTO
 
 	@NotBlank(message = "provide message")
 	private String message;
+
+	public String getFromUser() {
+		return fromUser;
+	}
+
+	public void setFromUser(String fromUser) {
+		this.fromUser = fromUser;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
 }
